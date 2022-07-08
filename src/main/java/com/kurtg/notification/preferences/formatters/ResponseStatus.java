@@ -10,7 +10,7 @@ public class ResponseStatus {
     private String statusDescription;
 
     private static final String success = "SUCCESS";
-    private static final String failure = "FAILURE";
+    private static final String failure = "ERROR";
 
     private static final String successMessage = "Notification Received Successfully";
     private static final String failureMessage = "";

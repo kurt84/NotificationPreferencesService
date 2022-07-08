@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PreferencesRepo extends JpaRepository<NotificationPreferences, Long>{
     NotificationPreferences findByCustomerid(String customerid);
+    <S extends NotificationPreferences> S save(S pref);
 }
 

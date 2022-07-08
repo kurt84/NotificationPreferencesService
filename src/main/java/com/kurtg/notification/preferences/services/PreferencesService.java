@@ -19,9 +19,9 @@ public class PreferencesService {
         return mapEntityToResponse(repo.findByCustomerid(req.getCustomerId()));
     }
 
-//    public PreferenceResponse Create(Preference pref){
-//        return mapEntityToResponse(repo.create(model2Entity(pref)));
-//    }
+    public PreferenceResponse Create(Preference pref){
+        return mapEntityToResponse(repo.save(model2Entity(pref)));
+    }
 
     static private Preference entity2Model(NotificationPreferences pref){
         if(pref != null)

@@ -13,25 +13,25 @@ public class PreferenceResponse {
     private String statusDescription;
     private boolean smsPreferenceFlag;
     private boolean emailPreferenceFlag;
-    private String emailAddress;
     private String phoneNumber;
+    private String emailAddress;
 
-    public PreferenceResponse(String status, String statusDescription, boolean smsPreferenceFlag, boolean emailPreferenceFlag, String emailAddress, String phoneNumber) {
+    public PreferenceResponse(String status, String statusDescription, boolean smsPreferenceFlag, boolean emailPreferenceFlag, String phoneNumber, String emailAddress) {
         this.status = status;
         this.statusDescription = statusDescription;
         this.smsPreferenceFlag = smsPreferenceFlag;
         this.emailPreferenceFlag = emailPreferenceFlag;
-        this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
     }
 
-    public PreferenceResponse(ResponseStatus status, boolean smsPreferenceFlag, boolean emailPreferenceFlag, String emailAddress, String phoneNumber) {
+    public PreferenceResponse(ResponseStatus status, boolean smsPreferenceFlag, boolean emailPreferenceFlag, String phoneNumber, String emailAddress) {
         this.status = status.getStatus();
         this.statusDescription = status.getStatusDescription();
         this.smsPreferenceFlag = smsPreferenceFlag;
         this.emailPreferenceFlag = emailPreferenceFlag;
-        this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
     }
 
     public PreferenceResponse(ResponseStatus status, Preference pref) {
@@ -40,13 +40,13 @@ public class PreferenceResponse {
         if(pref != null) {
             this.smsPreferenceFlag = pref.getSmsPreferenceFlag();
             this.emailPreferenceFlag = pref.getEmailPreferenceFlag();
-            this.emailAddress = pref.getEmailAddress();
             this.phoneNumber = pref.getPhoneNumber();
+            this.emailAddress = pref.getEmailAddress();
         }else{
             this.smsPreferenceFlag = false;
             this.emailPreferenceFlag = false;
-            this.emailAddress = "";
             this.phoneNumber = "";
+            this.emailAddress = "";
         }
     }
 }

@@ -30,15 +30,14 @@ public class PreferencesController {
 
     @PostMapping
     @ApiOperation(value = "Get preferences for customer id", response = PreferenceResponse.class)
-    public PreferenceResponse postFunction1(@RequestBody PreferenceRequest req) {
+    public PreferenceResponse postGet(@RequestBody PreferenceRequest req) {
         return preferencesService.ReadByCustomerId(req);
     }
 
 
-//    @PostMapping(consumes="application/json")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public com.kurtg.notification.preferences.model.Preference post(@RequestBody com.kurtg.notification.preferences.model.Preference pref) {
-////        return preferencesService.save(pref);
-//        return pref;
-//    }
+    @PostMapping(consumes="application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public PreferenceResponse post(@RequestBody com.kurtg.notification.preferences.model.Preference pref) {
+        return preferencesService.Create(pref);
+    }
 }
